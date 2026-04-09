@@ -62,6 +62,7 @@ CREATE TABLE Transactions (
     transaction_id INTEGER PRIMARY KEY,
     game_id INTEGER,
     platform_id INTEGER,
+    client_id INTEGER,
     quantity INTEGER,
     transaction_type TEXT,
     transaction_date TEXT DEFAULT CURRENT_TIMESTAMP,
