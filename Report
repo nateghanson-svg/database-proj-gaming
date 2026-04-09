@@ -12,8 +12,6 @@ Games(game_id, title, release_year, company_id)
 Junction table Game_Platform(game_id, platform_id, copies_sold, in_stock)
 Transactions(transaction_id, game_id, platform_id, client_id, quantity, transaction_type, transaction_date)
 
-ER Diagram: 
-
 The program begins by asking if the user is a client or an employee. 
 Employees can restock games or just view all the games offered by the store, whether in stock or not.
 Clients use their id (or generate a new one) to make sure their transactions are private.
