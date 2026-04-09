@@ -1,1 +1,29 @@
+The Game Store Application is a console-based Java program that simulates a video game store. It allows employees to manage inventory and clients to browse, purchase games, and track their purchase history. The application stores all data in a SQLite database, ensuring persistence of stock and transactions.
+Its key features include:
+Employee menu - restock games or view all games
+Client menu - order games, view available games, or view your previous transactions
+Error handling
+Database operations to keep track of transactions and stock.
 
+The application uses 5 tables:
+Companies(company_id, Name)
+Platforms(platform_id, Name)
+Games(game_id, title, release_year, company_id)
+Junction table Game_Platform(game_id, platform_id, copies_sold, in_stock)
+Transactions(transaction_id, game_id, platform_id, client_id, quantity, transaction_type, transaction_date)
+
+ER Diagram: 
+
+The program begins by asking if the user is a client or an employee. 
+Employees can restock games or just view all the games offered by the store, whether in stock or not.
+Clients use their id (or generate a new one) to make sure their transactions are private.
+They can then buy games, view available games (only in stock), or view their previous transactions.
+
+Methods: 
+ProgramStart() - Asks for the role of the user. From here, either EmpMenu() or ClientMenu() are called.
+EmpMenu(), ClientMenu() - Provides different options for the user to choose from depending on if they are a client or employee.
+RestockScreen() - Allows an employee to restock games.
+PurchaseScreen() - Allows clients to buy games.
+AvailableScreen(), EmpGameScreen() - Show games and info.
+TransactionsScreen() - Shows the client their past transactions.
+getUniqueClientId() - Generates an id for new clients and ensures that id is unique.
